@@ -47,7 +47,7 @@ func (t *mcpTool) Call(ctx context.Context, input string) (string, error) {
 	var args map[string]interface{}
 	err := json.Unmarshal([]byte(input), &args)
 	if err != nil {
-		return "input must be valid json", nil
+		return "call the tool error: input must be valid json, retry tool calling with correct json", nil
 	}
 	req.Params.Arguments = args
 
